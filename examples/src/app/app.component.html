@@ -1,0 +1,68 @@
+<!-- <h1>
+    {{title}}
+  </h1>
+  <ul>
+   
+    <li>
+      <a routerLink="customer/customer1">customer1</a>
+    </li>
+    <li>
+      <a routerLink="customer/customer2">customer2</a>
+    </li>
+    <li>
+      <a routerLink="order/order1">order1</a>
+    </li>
+    <li>
+      <a routerLink="order/order2">order2</a>
+    </li>
+  </ul> -->
+ 
+<!--    
+  <app-menuitem></app-menuitem> -->
+  
+
+
+
+<!-- <div class="card flex justify-content-center">
+  <p-sidebar [(visible)]="customerSidebarVisible" position="right">
+    <a routerLink="customer/customer1">customer1</a><br><br>
+    <a routerLink="customer/customer2">customer2</a>
+  </p-sidebar>
+  <p-button (click)="toggleCustomerSidebar()" icon="pi pi-arrow-right" label="customer"></p-button>
+  <a></a>
+</div>
+
+<br><br>
+
+<div class="card flex justify-content-center">
+  <p-sidebar [(visible)]="filterSidebarVisible" position="right">
+    <a routerLink="filter/filter1">filter1</a><br><br>
+    <a routerLink="filter/filter2">filter2</a>
+  </p-sidebar>
+  <p-button (click)="toggleFilterSidebar()" icon="pi pi-arrow-left" label="filter"></p-button>
+</div>
+
+<br><br>
+
+<div class="card flex justify-content-center">
+  <p-sidebar [(visible)]="optionssidebarVisible" position="right">
+    <a routerLink="options/options1">options1</a><br><br>
+    <a routerLink="options/options2">options2</a>
+  </p-sidebar>
+  <p-button (click)="toggleoptionsSidebar()" icon="pi pi-arrow-right" label="options"></p-button>
+</div>
+
+<br><br>
+
+<div class="card flex justify-content-center">
+  <p-sidebar [(visible)]="ordersidebarVisible" position="right">
+    <a routerLink="order/order1">order1</a><br><br>
+    <a routerLink="order/order2">order2</a>
+  </p-sidebar>
+  <p-button (click)="toggleordersSidebar()" icon="pi pi-arrow-right" label="order"></p-button>
+</div> -->
+
+<div class="card flex justify-content-left">
+  <p-panelMenu [model]="items" [style]="{'width':'200px'}"  styleClass="bold-menu" ></p-panelMenu>
+</div>
+  <router-outlet></router-outlet>

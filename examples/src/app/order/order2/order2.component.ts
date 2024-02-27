@@ -1,0 +1,10 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-order2',
+  templateUrl: './order2.component.html',
+  styleUrl: './order2.component.css'
+})
+export class Order2Component {
+
+}
