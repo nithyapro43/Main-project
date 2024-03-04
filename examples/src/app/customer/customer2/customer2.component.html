@@ -1,1 +1,46 @@
-<p> Hi from customer2</p>
+<p-dialog [(visible)]="visible">
+    <ng-template pTemplate="headless">
+      <div>
+    <div class="input-container" style="display: flex; flex-direction: column; align-items: center; padding: 20px;">
+    <div class="input-row">
+        <label for="customerName">Customer Name:</label>
+        <input pInputText id="customerName" type="text" [(ngModel)]="customerName" />
+    </div>
+    <br>
+    <div class="input-row">
+        <label for="address1">Address 1:</label>
+        <input pInputText id="address1" type="text" [(ngModel)]="address1" />
+    </div>
+    <br>
+    <div class="input-row">
+        <label for="address2">Address 2:</label>
+        <input pInputText id="address2" type="text" [(ngModel)]="address2" />
+    </div>
+    <br>
+    <div class="input-row">
+        <label for="city">City:</label>
+        <input pInputText id="city" type="text" [(ngModel)]="city" />
+    </div>
+    <br>
+    <div class="input-row">
+        <label for="state">State:</label>
+        <input pInputText id="state" type="text" [(ngModel)]="state" />
+    </div>
+    <br>
+   
+
+    <div class="flex align-items-center gap-2">
+        <p-button label="Save" (click)="saveCustomer()"  [text]="true" class="w-full"></p-button>
+     
+        <p-button label="Cancel" (click)="cancelCustomer()" [text]="false" class="w-full"></p-button>
+      </div>
+</div>
+ </div>
+    </ng-template>
+<!-- <p-dialog [(visible)]="visible"></p-dialog> -->
+
+
+
+
+ 
+    

@@ -1,3 +1,79 @@
+<app-customer2 [visible]="visible" (childevent)="addOutStudents($event)"></app-customer2>
+<router-outlet></router-outlet>
+
+ <p-table [value]="Receivedcustomers"
+[paginator]="true"
+[rows]="10"
+editMode="row"
+[showCurrentPageReport]="true"
+[tableStyle]="{ 'min-width': '50rem' }"
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+[rowsPerPageOptions]="[5, 10, 20]"
+[customSort]="false" 
+[globalFilterFields]="['customerName', 'city', 'state']">
+
+<ng-template pTemplate="caption">
+
+   <div class="flex">
+    <div class="card flex justify-content-center">
+        <p-button label="Add customers" icon="pi pi-plus" (onClick)="openPopup()"></p-button>
+      </div>
+       <span class="p-input-icon-left ml-auto">
+           <input pInputText type="text" (input)="searchByName($event)" placeholder="Search by name" style="width: 300px; height: 40px; padding: 5px;" />
+       </span>
+   </div>
+</ng-template>
+<ng-template pTemplate="header">
+<tr>
+   <th pSortableColumn="customerName" style="width:20%">Customer Name <p-sortIcon field="customerName"></p-sortIcon></th>
+   <th pSortableColumn="address1" style="width:20%">Address 1 <p-sortIcon field="address1"></p-sortIcon></th>
+   <th pSortableColumn="address2" style="width:20%">Address 2 <p-sortIcon field="address2"></p-sortIcon></th>
+   <th pSortableColumn="city" style="width:20%">City <p-sortIcon field="city"></p-sortIcon></th>
+   <th pSortableColumn="state" style="width:20%">State <p-sortIcon field="state"></p-sortIcon></th>
+   <th style="width:20%"></th>
+</tr>
+</ng-template>
 
 
-<p> Hi from customer1</p>
+<ng-template pTemplate="body" let-customer let-ri="rowIndex">
+    <tr>
+      <ng-container *ngIf="editingRowIndex !== ri; else editRow">
+      
+        <td>{{ customer.customerName }}</td>
+        <td>{{ customer.address1 }}</td>
+        <td>{{ customer.address2 }}</td>
+        <td>{{ customer.city }}</td>
+        <td>{{ customer.state }}</td>
+        <td>
+          <button pButton type="button" icon="pi pi-pencil" (click)="startEditing(ri)"></button>
+        </td>
+        <td>
+            <button pButton type="button" icon="pi pi-trash" (click)="deleteRow(ri)"></button>
+        </td>
+      </ng-container>
+      <ng-template #editRow>
+      
+        <td><input type="text" [(ngModel)]="customer.customerName"></td>
+        <td><input type="text" [(ngModel)]="customer.address1"></td>
+        <td><input type="text" [(ngModel)]="customer.address2"></td>
+        <td><input type="text" [(ngModel)]="customer.city"></td>
+        <td><input type="text" [(ngModel)]="customer.state"></td>
+        <td>
+          <button pButton type="button" icon="pi pi-check" (click)="saveRow(ri)"></button>
+          <button pButton type="button" icon="pi pi-times" (click)="cancelEditRow()"></button>
+        </td>
+      </ng-template>
+    </tr>
+  </ng-template>
+ 
+
+<ng-template pTemplate="paginatorleft">
+<p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+</ng-template>
+<ng-template pTemplate="paginatorright">
+<p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+</ng-template>
+</p-table>
+
+
+ 

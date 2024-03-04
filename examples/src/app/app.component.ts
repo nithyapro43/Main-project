@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuItem } from './menuitem/menuitem.model';
+import { MenuItem } from './model';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +29,8 @@ export class AppComponent {
   // }
  
 
-  items: MenuItem[] | undefined;
-
+  items: MenuItem[]=[];
+  
   
   
   ngOnInit() {
@@ -39,12 +39,12 @@ export class AppComponent {
               label: 'CUSTOMER',
               items: [
                   {
-                      label: 'customer1',
+                      label: 'Customers',
                       icon: 'pi pi-circle',
                       routerLink: "customer/customer1"
                   },
                   {
-                      label: 'customer2',
+                      label: 'Add or Edit',
                       icon: 'pi pi-circle',
                       routerLink: "customer/customer2"
                   }
@@ -96,5 +96,11 @@ export class AppComponent {
         ]
     }
         ]
-}
+    }
+       
+
+
+
+
+
 }
