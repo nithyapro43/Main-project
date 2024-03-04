@@ -12,6 +12,11 @@ import { ButtonModule } from 'primeng/button';
 import { CustomerModule } from './customer/customer.module';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { OrderModule } from './order/order.module';
+import { InputTextModule } from 'primeng/inputtext';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +25,10 @@ import { DialogModule } from 'primeng/dialog';
   imports: [
     BrowserModule,
     AppRoutingModule,MenuModule,BrowserAnimationsModule,ToastModule,PanelMenuModule,
-    SidebarModule,CustomerModule,ButtonModule,TableModule,DialogModule
+    SidebarModule,CustomerModule,ButtonModule,TableModule,DialogModule,OrderModule,InputTextModule
    
   ],
+  exports:[],
   providers: [],
   bootstrap: [AppComponent]
 })

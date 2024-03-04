@@ -2,32 +2,68 @@ import { Component } from '@angular/core';
 import { MenuItem } from './model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // customerSidebarVisible: boolean = false;
-  // filterSidebarVisible: boolean = false;
-  // optionssidebarVisible:boolean =false;
-  // ordersidebarVisible:boolean=false;
 
-  // toggleCustomerSidebar() {
-  //   this.customerSidebarVisible = !this.customerSidebarVisible;
-  // }
+    // orders: order[] = [{
+    //     "itemName": "Idly",
+    //     "orderDate": "27-02-2024",
+    //     "code": 1,
+    //     "desc": "with sambar"
+    // },
+    // {
+    //     "itemName": "Dosa",
+    //     "orderDate": "27-02-2024",
+    //     "code": 2,
+    //     "desc": "with chetney"
+    // },
+    // {
+    //     "itemName": "Vada",
+    //     "orderDate": "27-02-2024",
+    //     "code": 3,
+    //     "desc": "with sambar"
+    // },
+    // {
+    //     "itemName": "Pongal",
+    //     "orderDate": "27-02-2024",
+    //     "code": 4,
+    //     "desc": "with chetney"
+    // },
+    // {
+    //     "itemName": "Lemon Rice",
+    //     "orderDate": "27-02-2024",
+    //     "code": 5,
+    //     "desc": "with fried chillies"
+    // }]
 
-  // toggleFilterSidebar() {
-  //   this.filterSidebarVisible = !this.filterSidebarVisible;
-  // }
+    // showOrders() {
+    //     this.orders;
 
-  // toggleoptionsSidebar() {
-  //   this.optionssidebarVisible = !this.optionssidebarVisible;
-  // }
+    // }
+    // customerSidebarVisible: boolean = false;
+    // filterSidebarVisible: boolean = false;
+    // optionssidebarVisible:boolean =false;
+    // ordersidebarVisible:boolean=false;
 
-  // toggleordersSidebar() {
-  //   this.ordersidebarVisible = !this.ordersidebarVisible;
-  // }
- 
+    // toggleCustomerSidebar() {
+    //   this.customerSidebarVisible = !this.customerSidebarVisible;
+    // }
+
+    // toggleFilterSidebar() {
+    //   this.filterSidebarVisible = !this.filterSidebarVisible;
+    // }
+
+    // toggleoptionsSidebar() {
+    //   this.optionssidebarVisible = !this.optionssidebarVisible;
+    // }
+
+    // toggleordersSidebar() {
+    //   this.ordersidebarVisible = !this.ordersidebarVisible;
+    // }
+
 
   items: MenuItem[]=[];
   
