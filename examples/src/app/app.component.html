@@ -65,4 +65,28 @@
 <div class="card flex justify-content-left">
   <p-panelMenu [model]="items" [style]="{'width':'200px'}"  styleClass="bold-menu" ></p-panelMenu>
 </div>
+
+<!-- <div class="card" *ngIf="orders.length>0" style="max-height: 50px !important;">
+    <p-table [value]="orders" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ItemName</th>
+            <th>OrderDate</th>
+            <th>Code</th>
+            <th>Description</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-order>
+          <tr>
+            <td>{{ order.itemName }}</td>
+            <td>{{ order.orderDate }}</td>
+            <td>{{ order.code }}</td>
+            <td>{{ order.desc }}</td>
+
+          </tr>
+        </ng-template>
+    </p-table> 
+      
+</div> -->
+
   <router-outlet></router-outlet>

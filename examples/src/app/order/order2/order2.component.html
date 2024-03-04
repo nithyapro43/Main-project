@@ -1,1 +1,31 @@
 <p> Hi from order2</p>
+
+<div class="p-grid">
+
+  <div class="p-col-3" >
+      <label for="OIN" class="mr-2">ItemName:</label>
+      <input pInputText id="OIN" [(ngModel)]="itemName" />
+
+  </div>
+
+  <div class="p-col-3">
+      <label for="Odate" class="mr-2">OrderDate:</label>
+      <input pInputText id="Odate" [(ngModel)]="orderDate" />
+
+  </div>
+  <div class="p-col-3">
+       <label for="Ocode" class="mr-2">Code:</label>
+      <input pInputText id="Ocode" [(ngModel)]="code" />
+
+  </div>
+  <div class="p-col-3">
+    <label for="Odes" class="mr-2">Description:</label>
+   <input pInputText id="Odes" [(ngModel)]="desc" />
+
+</div>
+  <div class="p-col-3">
+  <p-button label="Save" icon="pi pi-save" (click)="addOrder();"></p-button>
+  </div>
+
+</div>
+

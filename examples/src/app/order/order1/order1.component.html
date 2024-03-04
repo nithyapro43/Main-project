@@ -1,1 +1,40 @@
 <p> Hi from order1</p>
+
+<div class="p-col-3">
+  <p-button label="Add Order" icon="pi pi-plus" (click)="openAddOrder();"></p-button>
+  </div>
+
+<div class="card" *ngIf="orders.length>0" style="max-height: 50px !important;">
+  <p-table *ngIf="!showAddOrderPage" #dt1 [value]="filteredOrders" dataKey="id" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [globalFilterFields]="['itemName', 'orderDate', 'code', 'desc']">
+
+    <ng-template pTemplate="caption">
+      <div class="flex">
+        <span class="p-input-icon-left ml-auto">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="filterGlobal($event)" placeholder="Search keyword" />
+          </span>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="itemName" style="width:15%">ItemName <p-sortIcon field="itemName"></p-sortIcon></th>
+        <th pSortableColumn="orderDate" style="width:10%">OrderDate <p-sortIcon field="orderDate"></p-sortIcon></th>
+        <th pSortableColumn="code" style="width:10%">Code <p-sortIcon field="code"></p-sortIcon></th>
+        <th pSortableColumn="desc" style="width:20%">Description <p-sortIcon field="desc"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-order>
+      <tr>
+        <td>{{ order.itemName }}</td>
+        <td>{{ order.orderDate }}</td>
+        <td>{{ order.code }}</td>
+        <td>{{ order.desc }}</td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+<app-order2 *ngIf="showAddOrderPage" (dataUpdated)="onDataUpdated($event)"></app-order2>
+</div>
