@@ -1,0 +1,25 @@
+<div class="card">
+  <p-treeTable [value]="files" [scrollable]="true" [tableStyle]="{'min-width':'50rem'}">
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width: 60px;"></th>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Type</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+          <tr [ttRow]="rowNode" [class.disabled]="rowData.disabled" (click)="toggleRow(rowData)">
+              <td style="width: 45px;">
+                  <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+              </td>
+              <td >
+                  <input type="checkbox"   [disabled]="rowData.disabled">
+                  {{ rowData.name }}
+              </td>
+              <td>{{ rowData.size }}</td>
+              <td>{{ rowData.type }}</td>
+          </tr>
+      </ng-template>
+  </p-treeTable>
+</div>

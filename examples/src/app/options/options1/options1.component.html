@@ -1,1 +1,31 @@
-<p> Hi from options1</p>
+
+<div class="card flex justify-content-center">
+  <p-button label="Add Orders" icon="pi pi-plus" (onClick)="openPopup()"></p-button>
+</div>
+
+
+<app-options2 [visible]="visible" (childevent)="addOutStudents($event)"></app-options2>
+<router-outlet></router-outlet>
+
+<p-table [value]="Receivedproducts" *ngIf="Receivedproducts.length>0">
+  <ng-template pTemplate="header">
+    <tr>
+      
+      <th>Code</th>
+      <th>ItemName</th>
+      <th>Quantity</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product let-i="index">
+    <tr>
+     
+      <td>{{ product.code }}</td>
+      <td>{{ product.itemname }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>
+        <button pButton type="button" icon="pi pi-trash" (click)="deleteProduct(i)"></button>
+    </td>
+  
+    </tr>
+  </ng-template>
+</p-table>

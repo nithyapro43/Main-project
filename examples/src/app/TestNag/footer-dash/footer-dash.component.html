@@ -1,0 +1,5 @@
+<p>footer-dash works!</p>
+<ng-container *ngFor="let footer of footers">
+  <app-footer [footerId]="footer.footer_id" #footerComponent></app-footer>
+  <button (click)="addNameToFooter(footer.footer_id, 'Nag-'+footer.footer_id)">Add Name</button>
+</ng-container>
