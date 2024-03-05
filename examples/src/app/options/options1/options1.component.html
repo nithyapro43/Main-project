@@ -4,10 +4,10 @@
 </div>
 
 
-<app-options2 [visible]="visible" (childevent)="addOutStudents($event)"></app-options2>
+<app-options2 [visible]="visible" (childevent)="addOrders($event)"></app-options2>
 <router-outlet></router-outlet>
 
-<p-table [value]="Receivedproducts" *ngIf="Receivedproducts.length>0">
+<p-table [value]="receivedOrders" *ngIf="receivedOrders.length>0">
   <ng-template pTemplate="header">
     <tr>
       
@@ -16,14 +16,14 @@
       <th>Quantity</th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-product let-i="index">
+  <ng-template pTemplate="body" let-order let-i="index">
     <tr>
      
-      <td>{{ product.code }}</td>
-      <td>{{ product.itemname }}</td>
-      <td>{{ product.quantity }}</td>
+      <td>{{ order.code }}</td>
+      <td>{{ order.itemname }}</td>
+      <td>{{ order.quantity }}</td>
       <td>
-        <button pButton type="button" icon="pi pi-trash" (click)="deleteProduct(i)"></button>
+        <button pButton type="button" icon="pi pi-trash" (click)="deleteOrder(i)"></button>
     </td>
   
     </tr>

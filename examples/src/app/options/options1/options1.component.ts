@@ -8,34 +8,33 @@ import { order } from '../optionsmodel';
 })
 export class Options1Component {
 
-  visible:boolean=false;
-  Receivedproducts:order[] = [];
-  code:string='';
-  itemname:string='';
-  quantity:string='';
-  
- code1="";
-  name1="";
-  category1="";
-  quantity1="";
-  
+  visible: boolean = false;
+  receivedOrders: order[] = [];
+  code: string = '';
+  itemname: string = '';
+  quantity: string = '';
+
+  code1 = "";
+  name1 = "";
+  quantity1 = "";
+
   product: order[] = [];
- 
-  openPopup(){
-  this.visible=true;
+
+  openPopup() {
+    this.visible = true;
   }
 
 
-  addOutStudents(prod: order[]){
-this.Receivedproducts = prod;
-  this.code1=this.code;
-this.name1=this.itemname;
- this.quantity1=this.quantity;
- this.visible=false;
-   }
-  
-   deleteProduct(index: number) {
-    this.Receivedproducts.splice(index, 1); 
+  addOrders(order: order[]) {
+    this.receivedOrders = order;
+    this.code1 = this.code;
+    this.name1 = this.itemname;
+    this.quantity1 = this.quantity;
+    this.visible = false;
+  }
+
+  deleteOrder(index: number) {
+    this.receivedOrders.splice(index, 1);
   }
 
 

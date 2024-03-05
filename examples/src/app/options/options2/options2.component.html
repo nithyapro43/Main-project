@@ -2,7 +2,7 @@
   <ng-template pTemplate="headless">
     <div>
       <div class="card">
-          <p-table [value]="products" [(selection)]="selectedProducts" dataKey="code"  [tableStyle]="{'min-width': '50rem'}">
+          <p-table [value]="orders" [(selection)]="selectedOrders" dataKey="code"  [tableStyle]="{'min-width': '50rem'}">
               <ng-template pTemplate="header">
                   <tr>
                       <th style="width: 4rem">
@@ -13,14 +13,14 @@
                       <th style="min-width:200px">Quantity</th>
                   </tr>
               </ng-template>
-              <ng-template pTemplate="body" let-product>
+              <ng-template pTemplate="body" let-order>
                   <tr>
                       <td>
-                          <p-tableCheckbox [value]="product" ></p-tableCheckbox>
+                          <p-tableCheckbox [value]="order" ></p-tableCheckbox>
                       </td>
-                      <td>{{product.code}}</td>
-                      <td>{{product.itemname}}</td>
-                      <td>{{product.quantity}}</td>
+                      <td>{{order.code}}</td>
+                      <td>{{order.itemname}}</td>
+                      <td>{{order.quantity}}</td>
                   </tr>
               </ng-template>
 <br>
@@ -29,11 +29,11 @@
         
                   <div style="display: flex; justify-content: space-between;">
                       <div class="card" style="flex: 1;">
-                          <p-button label="Save" (click)="addproducts()" [text]="false" class="w-full"></p-button>
+                          <p-button label="Save" (click)="addOrders()" [text]="false" class="w-full"></p-button>
                       </div>
                   
                       <div style="margin-left: auto; margin-left: 10px;">
-                          <p-button label="Cancel" (click)="cancelproducts()" [text]="false" class="w-full"></p-button>
+                          <p-button label="Cancel" (click)="cancelOrders()" [text]="false" class="w-full"></p-button>
                       </div>
                   </div>
              </ng-template>

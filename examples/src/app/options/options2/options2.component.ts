@@ -12,26 +12,26 @@ export class Options2Component {
   visible!: boolean;
   @Output()  childevent: EventEmitter<order[]>=new EventEmitter<order[]>();
   
-  products:order[] =[];
-  selectedProducts: order[] = [];
+  orders:order[] =[];
+  selectedOrders: order[] = [];
   code:string='';
     name:string='';
     category:string='';
     quantity:string='';
   
- addproducts(){
-  this.childevent.emit(this.selectedProducts); 
+ addOrders(){
+  this.childevent.emit(this.selectedOrders); 
   this.visible = false;
  }
 
 
- cancelproducts(){
+ cancelOrders(){
   this.visible = false;
  }
     
     ngOnInit() {
    
-      this.products= [
+      this.orders= [
          
          {code:1,itemname:'Idly',quantity:5},
          {code:2,itemname:'Dosa',quantity:10},
