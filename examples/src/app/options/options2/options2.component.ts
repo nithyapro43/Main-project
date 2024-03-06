@@ -19,10 +19,19 @@ export class Options2Component {
     category:string='';
     quantity:string='';
   
- addOrders(){
-  this.childevent.emit(this.selectedOrders); 
-  this.visible = false;
- }
+
+  addOrders(){
+    const sortedSelectedOrders: order[] = [];
+      for (const order of this.orders) {
+        const selectedOrder = this.selectedOrders.find(o => o.code === order.code);
+        if (selectedOrder) {
+          sortedSelectedOrders.push(selectedOrder);
+        }
+      }
+      this.childevent.emit(sortedSelectedOrders); 
+      this.visible = false;
+   }
+ 
 
 
  cancelOrders(){
@@ -33,18 +42,27 @@ export class Options2Component {
    
       this.orders= [
          
-         {code:1,itemname:'Idly',quantity:5},
-         {code:2,itemname:'Dosa',quantity:10},
-         {code:3,itemname:'Pongal',quantity:12},
-         {code:4,itemname:'Upma',quantity:8},
-         {code:5,itemname:'Kesari',quantity:6}
+         {code:'1',itemname:'Idly',quantity:'5'},
+         {code:'2',itemname:'Dosa',quantity:'10'},
+         {code:'3',itemname:'Pongal',quantity:'12'},
+         {code:'4',itemname:'Upma',quantity:'8'},
+         {code:'5',itemname:'Kesari',quantity:'6'}
         
         
     ];
    
   }
 
-
+  handleSelection(event: any, product: order) {
+    if (event.checked) {
+      this.selectedOrders.push(product);
+    } else {
+      const index = this.selectedOrders.findIndex(p => p.code === product.code);
+      if (index !== -1) {
+        this.selectedOrders.splice(index, 1);
+      }
+    }
+  }
 
 
 }

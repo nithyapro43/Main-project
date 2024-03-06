@@ -27,7 +27,7 @@ export class Filter1Component {
 
 
   addOutStudents(prod: productmodel[]){
-this.Receivedproducts = prod;
+this.Receivedproducts = this.Receivedproducts.concat(prod);
   this.code1=this.code;
 this.name1=this.name;
  this.category1=this.category;
@@ -35,17 +35,14 @@ this.name1=this.name;
  this.visible=false;
    }
   
-   deleteProduct(index: number) {
-    this.Receivedproducts.splice(index, 1); 
+   deleteProduct(selectedorder: productmodel) {
+
+    const index = this.Receivedproducts.findIndex(product => product.code === selectedorder.code);
+    if (index !== -1) {
+      this.Receivedproducts.splice(index, 1);
+    }
   }
    
-  //  saveContent(){
-  //   let contentObj:contentmodel={
-  //     ID:this.content.length+1,
-  //     products:this.Receivedproducts 
-  //     };
-  //     alert("Content"+ JSON.stringify(contentObj))
-  //     // console.log("Content"+ JSON.stringify(contentObj));
-  //  }
+  
 
 }

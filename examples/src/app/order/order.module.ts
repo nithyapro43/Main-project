@@ -5,6 +5,8 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms'
+import { DialogModule } from 'primeng/dialog';
+
 
 
 import { Order1Component } from './order1/order1.component';
@@ -18,7 +20,8 @@ import { Order2Component } from './order2/order2.component';
     TableModule,
     InputTextModule,
     ButtonModule,
-    FormsModule
+    FormsModule,
+    DialogModule
   ],
 
 })

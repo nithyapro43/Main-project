@@ -7,7 +7,7 @@
 <app-options2 [visible]="visible" (childevent)="addOrders($event)"></app-options2>
 <router-outlet></router-outlet>
 
-<p-table [value]="receivedOrders" *ngIf="receivedOrders.length>0">
+<p-table [value]="receivedOrders" *ngIf="receivedOrders.length>0" sortMode="multiple">
   <ng-template pTemplate="header">
     <tr>
       
@@ -23,7 +23,7 @@
       <td>{{ order.itemname }}</td>
       <td>{{ order.quantity }}</td>
       <td>
-        <button pButton type="button" icon="pi pi-trash" (click)="deleteOrder(i)"></button>
+        <button pButton type="button" icon="pi pi-trash" (click)="deleteOrder(order)"></button>
     </td>
   
     </tr>

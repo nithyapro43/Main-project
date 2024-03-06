@@ -1,7 +1,5 @@
 
-<div class="p-col-3">
-  <p-button label="Add Order" icon="pi pi-plus" (click)="openAddOrder();"></p-button>
-  </div>
+
 
 <div class="card" *ngIf="orders.length>0" style="max-height: 50px !important;">
   <p-table *ngIf="!showAddOrderPage" #dt1 [value]="filteredOrders" dataKey="id" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
@@ -10,6 +8,9 @@
 
     <ng-template pTemplate="caption">
       <div class="flex">
+        <div class="p-col-3">
+          <p-button label="Add Order" icon="pi pi-plus" (click)="openAddOrder();"></p-button>
+          </div>
         <span class="p-input-icon-left ml-auto">
           <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="filterGlobal($event)" placeholder="Search keyword" />

@@ -1,5 +1,5 @@
 export interface order {
-  code:number;
+  code:string;
   itemname:string;
-  quantity:number;
+  quantity:string;
 }

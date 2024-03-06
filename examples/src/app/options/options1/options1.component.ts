@@ -18,23 +18,26 @@ export class Options1Component {
   name1 = "";
   quantity1 = "";
 
-  product: order[] = [];
+  // product: order[] = [];
 
   openPopup() {
     this.visible = true;
   }
 
 
-  addOrders(order: order[]) {
-    this.receivedOrders = order;
+  addOrders(newOrders: order[]) {
+    this.receivedOrders = this.receivedOrders.concat(newOrders);
     this.code1 = this.code;
     this.name1 = this.itemname;
     this.quantity1 = this.quantity;
     this.visible = false;
   }
 
-  deleteOrder(index: number) {
-    this.receivedOrders.splice(index, 1);
+  deleteOrder(selectedorder: order) {
+    const index = this.receivedOrders.findIndex(product => product.code === selectedorder.code);
+    if (index !== -1) {
+      this.receivedOrders.splice(index, 1);
+    }
   }
 
 

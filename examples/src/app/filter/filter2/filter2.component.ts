@@ -18,9 +18,27 @@ export class Filter2Component {
     category:string='';
     quantity:string='';
   
+    handleSelection(event: any, product: productmodel) {
+      if (event.checked) {
+        this.selectedProducts.push(product);
+      } else {
+        const index = this.selectedProducts.findIndex(p => p.code === product.code);
+        if (index !== -1) {
+          this.selectedProducts.splice(index, 1);
+        }
+      }
+    }
+
  addproducts(){
-  this.childevent.emit(this.selectedProducts); 
-  this.visible = false;
+  const sortedselectedProducts: productmodel[] = [];
+      for (const product of this.products) {
+        const selectedProduct = this.selectedProducts.find(o => o.code === product.code);
+        if (selectedProduct) {
+          sortedselectedProducts.push(selectedProduct);
+        }
+      }
+      this.childevent.emit(sortedselectedProducts); 
+      this.visible = false;
  }
 
 
@@ -32,17 +50,18 @@ export class Filter2Component {
    
       this.products= [
          
-         {code:'f230fh0g3',name:'Bamboo Watch',category:'Accessories',quantity:'24'},
-         {code:'nvklal433',name:'Black Watch',category:'Accessories',quantity:'10'},
-         {code:'zz21cz3c1',name:'Blue Band',category:'Fitness',quantity:'15'},
-         {code:'244wgerg2',name:'Blue T-Shirt',category:'Clothing',quantity:'20'},
-         {code:'h456wer53',name:'Bracelet',category:'Accessories',quantity:'10'}
+         {code:'1',name:'Bamboo Watch',category:'Accessories',quantity:'24'},
+         {code:'2',name:'Black Watch',category:'Accessories',quantity:'10'},
+         {code:'3',name:'Blue Band',category:'Fitness',quantity:'15'},
+         {code:'4',name:'Blue T-Shirt',category:'Clothing',quantity:'20'},
+         {code:'5',name:'Bracelet',category:'Accessories',quantity:'10'}
         
         
     ];
    
   }
    
+  
 
  
 }
