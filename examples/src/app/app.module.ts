@@ -16,29 +16,34 @@ import { OrderModule } from './order/order.module';
 import { InputTextModule } from 'primeng/inputtext';
 import { FooterDashComponent } from './TestNag/footer-dash/footer-dash.component';
 import { FooterComponent } from './TestNag/footer/footer.component';
-
+import { MultiSelectModule } from 'primeng/multiselect';
 import { TreeTableComponent } from './TestNag/tree-table/tree-table.component';
 import { TreeTableModule } from 'primeng/treetable';
 import { NagService } from './TestNag/tree-table/nag-service';
-
-
+import { MultiSelectComponent } from './TestNag/multi-select/multi-select.component';
+import { FormsModule } from '@angular/forms';
+import { TreeModule } from 'primeng/tree';
+import { NodeService } from './TestNag/multi-select/nodeService';
+import { DropdownModule } from 'primeng/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
     FooterDashComponent,
     FooterComponent,
     TreeTableComponent,
-    
+    MultiSelectComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,MultiSelectModule,DropdownModule,
     AppRoutingModule,MenuModule,BrowserAnimationsModule,ToastModule,PanelMenuModule,
     SidebarModule,CustomerModule,ButtonModule,TableModule,DialogModule,OrderModule,InputTextModule
-    ,TreeTableModule
+    ,TreeTableModule, FormsModule,TreeModule
+    
   ],
   exports:[],
   providers: [
-NagService
+NagService,
+NodeService
 
   ],
   bootstrap: [AppComponent]
